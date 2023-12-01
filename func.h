@@ -1,7 +1,7 @@
 struct community
 {
 	char name[20];
-	char description[100];
+	char description[50];
 	int members;
 };
 void create(struct community** arr, int* n);

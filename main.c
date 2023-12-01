@@ -15,7 +15,7 @@ int main()
 	int stop = 0;
 	while(stop!=1)
 	{
-		printf("1-read from file, 2-create new database, 3-print current database");
+		printf("1-read from file, 2-create new database, 3-print current database ");
 		int key;
 		scanf("%d", &key);
 		char name[20];
@@ -28,18 +28,13 @@ int main()
 				break;
 			case 2:
 				create(&arr, &n);
-				printf("created");
 				if(n>0)
 				{
 					char key2[20];
-					printf("Do you want to write this on file?\ny-yes\nn-no\nenter: ");
-					if(scanf(" %c",&key2)==1)
+					printf("Do you want to save this on file?\ny-yes\nn or other-no\nenter: ");
+					if(scanf("%s",&key2)==1)
 					{
-						if(key2!="y"&&key2!="n")
-						{
-							printf("I m asking y or n, don't try to broke me :<");
-						}
-						else if(key2=="y")
+						if(*key2=='y')
 						{
 							printf("enter file name(with extension): ");
 							scanf("%s", name);
@@ -47,15 +42,11 @@ int main()
 						}
 						break;
 					}
-					else
-					{
-						fflush(stdin);
-					}
 				}
 				break;
 			case 3:
 				for (int i = 0;i < n;i++)
-					printf("%s\n%s\n%d\n", arr[i].name, arr[i].description, arr[i].members);
+					printf("name: %s\ndescription: %s\nmembers: %i\n", arr[i].name, arr[i].description, arr[i].members);
 				break;
 			default:
 			 	stop = 1;
