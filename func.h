@@ -7,3 +7,4 @@ struct community
 void create(struct community** arr, int* n);
 void write(struct community* arr, int n, char name[20]);
 void read(struct community** arr, int* n, char name[20]);
+void found(struct community* arr, int* n, int found_ind);

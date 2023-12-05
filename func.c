@@ -8,7 +8,7 @@
 */
 void create(struct community** arr, int* n)
 {
-	//retry:
+	retry:
 	printf("n= ");
 	if(scanf("%i",n)==1)
 	{
@@ -33,10 +33,9 @@ void create(struct community** arr, int* n)
 		printf("WHAT ARE YOU DO...X_X\n");
 		printf("Please, write n once again. CORRECTLY. PLEASE.\n");
 		//fflush(stdin);
-		//while((*n = getchar()) != '\n');
-		//goto retry;
+		while((*n = getchar()) != '\n');
+		goto retry;
 	}
-	printf("created");
 }
 void write(struct community* arr, int n, char name[20])
 {
@@ -70,4 +69,32 @@ void read(struct community** arr, int* n, char name[20])
 		if(fscanf(f, "%s %s %d", (*arr)[i].name, (*arr)[i].description, &(*arr)[i].members)!=3);
 	}
 	fclose(f);
+}
+void found(struct community* arr, int* n, int found_ind)
+{
+	int key1;
+	char key2[50];
+	switch(found_ind)
+	{
+		case 1:
+			printf("enter name: ");
+			scanf("%s",key2);
+			break;
+		case 2:
+			printf("enter description: ");
+			scanf("%s",key2);
+			break;
+		case 3:
+			printf("enter members:");
+			scanf("%i",&key1);
+			break;
+	}
+	printf("\n");
+	for(int i=0;i<*n;i++)
+	{
+		if(arr[i].members==key1||(arr[i].name==key2&&found_ind==1)||(arr[i].description==key2&&found_ind==2))
+		{
+			printf("name: %s\ndescription: %s\nmembers: %i\n\n", arr[i].name, arr[i].description, arr[i].members);
+		}
+	}
 }
