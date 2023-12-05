@@ -2,12 +2,6 @@
 #include<stdlib.h>
 #include"func.h"
 
-/*
-1-Добавить поиск структур
-2-Добавить поиск по полям
-3-Добавить поиск файлов DONE
-4-Добавить makefile DONE
-*/
 int main()
 {
 	struct community* arr = NULL;

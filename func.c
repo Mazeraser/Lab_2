@@ -1,11 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include"func.h"
-/*
-1-Попробовать запись и отображение полей в несколько строк DONE
-2-Добавить поиск структур
-3-Добавить поиск структур по полям
-*/
+
 void create(struct community** arr, int* n)
 {
 	retry:
@@ -32,7 +28,6 @@ void create(struct community** arr, int* n)
 	{
 		printf("WHAT ARE YOU DO...X_X\n");
 		printf("Please, write n once again. CORRECTLY. PLEASE.\n");
-		//fflush(stdin);
 		while((*n = getchar()) != '\n');
 		goto retry;
 	}
