@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 #include"func.h"
 
 void create(struct community** arr, int* n)
@@ -37,7 +38,7 @@ void write(struct community* arr, int n, char name[20])
 	FILE* f = fopen(name, "w");
 	if (!f)
 	{
-		printf("Error: %s not found", *name);
+		printf("Error: %s not found", name);
 		return;
 	}
 	fprintf(f, "%d\n", n);
@@ -87,7 +88,7 @@ void found(struct community* arr, int* n, int found_ind)
 	printf("\n");
 	for(int i=0;i<*n;i++)
 	{
-		if(arr[i].members==key1||(arr[i].name==key2&&found_ind==1)||(arr[i].description==key2&&found_ind==2))
+		if(arr[i].members==key1||(strcmp(arr[i].name,key2)==0&&found_ind==1)||(strcmp(arr[i].description,key2)==0&&found_ind==2))
 		{
 			printf("name: %s\ndescription: %s\nmembers: %i\n\n", arr[i].name, arr[i].description, arr[i].members);
 		}

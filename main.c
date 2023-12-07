@@ -28,7 +28,7 @@ int main()
 					printf("Do you want to save this on file?\n\ty-yes\n\tn or other-no\nenter: ");
 					if(scanf("%s",&key2)==1)
 					{
-						if(*key2=='y')
+						if(key2=="y")
 						{
 							printf("enter file name(with extension): ");
 							scanf("%s", name);
