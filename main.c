@@ -26,7 +26,7 @@ int main()
 				{
 					char key2[20];
 					printf("Do you want to save this on file?\n\ty-yes\n\tn or other-no\nenter: ");
-					if(scanf("%s",&key2)==1)
+					if(scanf("%s",key2)==1)
 					{
 						if(key2=="y")
 						{
